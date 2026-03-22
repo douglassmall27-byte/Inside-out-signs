@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inside-Out-Signs</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style></style>
+  </head>
+  <body>
+  <nav class="glass-nav">
+  <div class="logo">
+    <img src="InsideoutDesigns/Images/Logo.png" alt="Logo" />
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#tshirt">T-Shirts</a></li>
+    <li><a href="#whatwedo">What We Do</a></li>
+     <li><a href="#mxshirt">MX Shirts</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="#contact" class="contact-btn">Contact Us</a>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-links");
+    const links = document.querySelectorAll(".nav-links a");
+
+    // Toggle the menu and the "X" animation
+    menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navLinks.classList.toggle("active");
+    });
+
+    // Close the menu when any link is clicked
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            menuToggle.classList.remove("active");
+            navLinks.classList.remove("active");
+        });
+    });
+});
+</script>
+
+<section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Lets Print</span>
+      <h1>Hand Picked by You <br /><span>Hand Printed by Us</span></h1>
+      <p>Where Imagination Drives Design and High Fashion Comes to Life.</p>
+      <div class="hero-btns">
+        <a href="#shirt-picker" class="btn-primary">Customize your T Shirt</a>
+        <a href="#whatwedo" class="btn-secondary">What We Do ></a>
+      </div>
+    </div>
+  </section>
+
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="InsideoutDesigns/Images/Doulas-Small-About.jpeg" alt="Our Vision" class="hero-image" />
+        </div>
+
+        <div class="about-text">
+          <span class="eyebrow">About Us</span>
+          <h2>We believe design <br />is how it works.</h2>
+          <p>
+            Inside Out Signs provides high-quality custom signage, vinyl
+            printing, vehicle branding, decals, banners, and branded apparel in
+            Gqeberha and across the Eastern Cape.
+          </p>
+          <p>
+            We help businesses and individuals stand out with professional
+            designs, durable materials, and reliable service that bring your
+            brand to life.
+          </p>
+          <div class="stats">
+            <div class="stat-item">
+              <h4>3 Days</h4>
+              <span>Turnover Time</span>
+            </div>
+            <div class="stat-item">
+              <h4>Free Shipping</h4>
+              <span>Orders above R500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-glass-box">
+        <span class="eyebrow" style="color: white; opacity: 0.9"
+          >Ready to start?</span
+        >
+        <h2>Print Your Ideas Into Reality</h2>
+        <p>
+            From custom t-shirts to branded merchandise, we turn your designs into high-quality prints that stand out.
+
+        </p>
+        <div class="cta-btns">
+            <a href="#tshirt" class="btn-link">Customize a Shirt</a>
+          <a href="#contact" class="btn-glass">Contact Us</a>
+   
+        </div>
+      </div>
+    </section>
+
+ <section class="configurator-section" id="shirt-picker">
+    <div class="services-header">
+        <span class="eyebrow">Studio</span>
+        <h2>Wear the Vision.</h2>
+        <p>Select your canvas, define your fit, and make it yours.</p>
+    </div>
+
+    <div id="tshirt" class="config-container" style="align-items: stretch;">
+        <form id="order-form" class="controls-panel" style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; box-sizing: border-box;">
+            
+            <div class="top-controls">
+                <div class="option-group">
+                    <label>Color</label>
+                    <div class="color-picker">
+                        <div class="color-swatch black active" data-color="Black"></div>
+                        <div class="color-swatch navy" data-color="Navy" style="background: navy;"></div>
+                        <div class="color-swatch red" data-color="Red"></div>
+                        <div class="color-swatch pink" data-color="Pink"></div>
+                        <div class="color-swatch grey" data-color="Grey"></div>
+                        <div class="color-swatch white" data-color="White"></div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <div class="option-group" style="flex: 1;">
+                        <label>Size</label>
+                        <select id="shirt-size">
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                            <option>XL</option>
+                            <option>XXL</option>
+                        </select>
+                    </div>
+                    <div class="option-group" style="flex: 1;">
+                        <label>Quality</label>
+                        <select id="shirt-quality">
+                            <option>Cotton 140g</option>
+                            <option>Cotton 160g</option>
+                            <option>Cotton 180g</option>
+                             <option>Cotton 220g</option>
+                             <option>Dri fit polyester</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <button type="button" id="view-size-chart" style="background: none; border: none; color: #0071e3; cursor: pointer; font-size: 0.85rem; padding: 0; display: flex; align-items: center; gap: 5px; font-weight: 500;">
+                        <span>📏</span> View Sizing Chart
+                    </button>
+                    <div id="size-chart-container" style="display: none; margin-top: 12px; border: 1px solid #e5e5e5; border-radius: 12px; overflow: hidden; background: #fff; animation: fadeIn 0.3s ease;">
+                        <img src="InsideoutDesigns/Images/Size-Chart.jpeg" alt="Sizing Chart" style="width: 100%; display: block;" />
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label>Custom Text or Design Notes</label>
+                    <textarea id="custom-text-input" placeholder="Enter text to print or add any specific instructions for your design..." 
+                        style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #d2d2d7; font-family: inherit; min-height: 100px; resize: vertical; box-sizing: border-box;"></textarea>
+                </div>
+            </div>
+
+            <div style="display:none; opacity: 0; position: absolute; height: 0; width: 0; z-index: -1;">
+                <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="user-info" style="border-top: 1px solid #e5e5e5; padding-top: 20px;">
+                <label>Contact Details</label>
+                <input type="email" id="user-email" placeholder="Email Address" required />
+                <input type="tel" id="user-phone" placeholder="Phone Number" required />
+                
+                <button type="button" id="order-btn" style="width: 100%; padding: 18px; background: #1d1d1f; color: #fff; border: none; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 1rem; margin-top: 10px; transition: background 0.3s;">
+                    Place Order
+                </button>
+
+                <p style="margin-top: 15px; font-size: 0.8rem; color: #8e8e93; line-height: 1.4; text-align: center;">
+<strong>Custom Designs: For personalized printing requests and custom image uploads, please contact us at <a href="mailto:douglassmall27@gmail.com">douglassmall27@gmail.com</a>. Attach your design files and any specific instructions, and we'll handle the rest!</strong>
+            </div>
+        </form>
+
+        <div class="preview-panel">
+            <div class="shirt-display">
+                <img id="shirt-img" src="InsideoutDesigns/Images/Black-Shirt.PNG" alt="Shirt Preview" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal-overlay" id="orderModal">
+    <div class="modal-content">
+        <div style="font-size: 50px; color: #0071e3; margin-bottom: 10px;">✓</div>
+        <h2 style="margin-bottom: 10px;">Order Received</h2>
+        <p style="color: #8e8e93;">We'll be in touch shortly to finalize your design.</p>
+        
+        <div class="summary-box">
+            <p><strong>Email:</strong> <span id="display-email"></span></p>
+            <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+            <hr>
+            <p id="order-summary-text" style="font-size: 0.85rem; color: #1d1d1f; white-space: pre-line;"></p>
+        </div>
+
+        <button style="width: 100%; padding: 14px; border-radius: 12px; cursor: pointer; background: #0071e3; color: #fff; border: none; font-weight: 600;" onclick="closeOrderModal()">Confirm & Close</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    emailjs.init("tXjyDWH1CpKf-1VZr");
+
+    const colorMap = {
+        Black: "InsideoutDesigns/Images/Black-Shirt.PNG",
+        Navy: "InsideoutDesigns/Images/Navy.png",
+        Red: "InsideoutDesigns/Images/Red.png",
+        Pink: "InsideoutDesigns/Images/Pink.png",
+        Grey: "InsideoutDesigns/Images/Grey.png",
+        White: "InsideoutDesigns/Images/White.png",
+    };
+
+    let selectedColor = "Black";
+    const shirtImg = document.getElementById("shirt-img");
+    const colorSwatches = document.querySelectorAll(".color-swatch");
+    const orderBtn = document.getElementById("order-btn");
+    const modal = document.getElementById("orderModal");
+    const customTextInput = document.getElementById("custom-text-input");
+    const orderForm = document.getElementById("order-form");
+    const sizeChartBtn = document.getElementById("view-size-chart");
+    const sizeChartContainer = document.getElementById("size-chart-container");
+
+    // Color Selector
+    colorSwatches.forEach((swatch) => {
+        swatch.addEventListener("click", () => {
+            document.querySelector(".color-swatch.active").classList.remove("active");
+            swatch.classList.add("active");
+            selectedColor = swatch.dataset.color;
+            
+            shirtImg.style.opacity = "0";
+            setTimeout(() => {
+                shirtImg.src = colorMap[selectedColor] || colorMap.Black;
+                shirtImg.style.opacity = "1";
+            }, 150);
+        });
+    });
+
+    // Sizing Chart Toggle
+    sizeChartBtn.addEventListener("click", () => {
+        const isHidden = sizeChartContainer.style.display === "none";
+        sizeChartContainer.style.display = isHidden ? "block" : "none";
+        sizeChartBtn.innerHTML = isHidden ? "<span>✖</span> Close Sizing Chart" : "<span>📏</span> View Sizing Chart";
+    });
+
+    // Handle Order Submission
+    orderBtn.addEventListener("click", function() {
+        // --- HONEYPOT BOT PROTECTION ---
+        const botField = document.getElementById("honeypot").value;
+        if (botField !== "") {
+            console.warn("Spam attempt blocked.");
+            return; // Exit silently
+        }
+
+        const email = document.getElementById("user-email").value;
+        const phone = document.getElementById("user-phone").value;
+        const size = document.getElementById("shirt-size").value;
+        const quality = document.getElementById("shirt-quality").value;
+        const customDetails = customTextInput.value.trim() || "No additional notes provided.";
+
+        if (!email || !phone) {
+            alert("Please provide your contact information.");
+            return;
+        }
+
+        orderBtn.innerText = "Processing...";
+        orderBtn.disabled = true;
+
+        const templateParams = {
+            email: email,
+            phone: phone,
+            size: size,
+            color: selectedColor,
+            quality: quality,
+            printFile: customDetails
+        };
+
+        emailjs.send("service_ryscsx8", "template_w70lokk", templateParams)
+            .then(() => {
+                // Update Modal Content
+                document.getElementById("display-email").innerText = email;
+                document.getElementById("display-phone").innerText = phone;
+                document.getElementById("order-summary-text").innerText = 
+                    `Shirt: ${selectedColor}\nSize: ${size}\nQuality: ${quality}\nNotes: ${customDetails}`;
+                
+                // Show Success Modal
+                modal.classList.add("active");
+                modal.style.display = "flex";
+
+                // Clean Form
+                orderForm.reset();
+                sizeChartContainer.style.display = "none";
+                sizeChartBtn.innerHTML = "<span>📏</span> View Sizing Chart";
+            })
+            .catch((error) => {
+                console.error("FAILED...", error);
+                alert("Order submission failed. Please try again.");
+            })
+            .finally(() => {
+                orderBtn.innerText = "Place Order";
+                orderBtn.disabled = false;
+            });
+    });
+});
+
+function closeOrderModal() {
+    const modal = document.getElementById("orderModal");
+    modal.classList.remove("active");
+    setTimeout(() => { modal.style.display = "none"; }, 400);
+}
+</script>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<style>
+    .color-swatch.active {
+        border-color: #000 !important;
+        transform: scale(1.1);
+    }
+    .color-swatch:hover {
+        transform: scale(1.1);
+    }
+    #order-btn:hover {
+        background: #333 !important;
+    }
+    textarea:focus, select:focus, input:focus {
+        outline: none;
+        border-color: #000 !important;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+    }
+</style>
+
+
+<section id="mxshirt" class="mx-section">
+  <div class="mx-container">
+    <span class="mx-eyebrow">Ready to stand out on track??</span>
+    <h2 class="mx-title">Customised MX Racing Shirts</h2>
+    <p class="mx-description">
+      We offer fully customised sublimated MX racing shirts designed to match your vision, style, and performance needs. Whether you have a clear concept in mind or just a rough idea, we work closely with you to bring it to life. From colours, patterns, and sponsor logos to rider names and numbers, every detail is tailored to your specifications. Using high-quality sublimation printing, our designs are permanently embedded into the fabric, ensuring vibrant colours that won’t fade, crack, or peel. The result is a durable, professional-grade racing shirt that looks great on the track and stands up to the demands of motocross.
+    </p>
+
+   
+    <div class="mx-gallery">
+      <img src="InsideoutDesigns/Images/MX-SHirt.PNG" alt="Custom MX Shirt Design">
+      <img src="InsideoutDesigns/Images/MX-Shirt-back.PNG" alt="MX Rider Wearing Shirt">
+    </div>
+
+    <div class="mx-actions">
+      
+      <a href="#contact" class="mx-button">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+    
+
+    <section id="whatwedo"class="services-section" id="work">
+      <div class="services-header">
+        <span class="eyebrow">Services</span>
+
+        <h2>What We Do </h2>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item featured">
+          <img src="InsideoutDesigns/Images/Apparel.jpeg" alt="" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Branded Apparel</h3>
+            <p>Showcase your brand with professionally printed or embroidered apparel. From t-shirts and caps to workwear and uniforms, our branded clothing helps your team look professional while promoting your business wherever they go.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small">
+          <img src="InsideoutDesigns/Images/Banners.jpeg" alt="" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Banners</h3>
+            <p>Promote your business, event, or special offer with eye-catching banners. Our banners are printed on durable materials with sharp, vibrant graphics, making them ideal for both indoor and outdoor advertising that grabs attention from a distance.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small">
+          <img src="InsideoutDesigns/Images/Vinyl decal tools an.png" alt="" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Vinyl Decals</h3>
+            <p>Our custom vinyl decals are perfect for adding branding, information, or decorative elements to windows, walls, vehicles, and more. Made from high-quality materials, they are durable, weather-resistant, and designed to maintain vibrant colors over time.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small">
+          <img src="InsideoutDesigns/Images/Sinage.jpeg" alt="" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Custom Signage</h3>
+            <p>Make your business stand out with custom signage designed to capture attention. From storefront signs to indoor displays, we create durable and visually striking signage tailored to your brand, ensuring your business leaves a lasting impression.</p>
+          </div>
+        </div>
+
+        <div class="bento-item medium">
+          <img src="InsideoutDesigns/Images/Vehical.jpeg" alt="" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Vehicle Branding</h3>
+            <p>Turn your vehicles into powerful moving billboards with professional vehicle branding. We design and apply high-quality vinyl graphics that showcase your brand wherever you go, helping you increase visibility and create a strong, professional impression on the road.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+   
+
+    <section class="services-section" id="process">
+      <div class="services-header">
+        <span class="eyebrow">Process</span>
+
+        <h2>Step by Step Process</h2>
+      </div>
+
+      <div class="process-container">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content glass-card">
+            <h3>Place Your Order</h3>
+            <p>
+              Tell us what you need printed — from custom t-shirts to branded
+              merchandise. Upload your design or share your idea and we'll get the
+              process started.
+            </p>
+          </div>
+        </div>
+      
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content glass-card">
+            <h3>Customize Your Design</h3>
+            <p>
+              Work with us to customize your shirt. Choose your garment, colors,
+              print placement, and sizing to create the perfect look for your brand,
+              event, or personal style.
+            </p>
+          </div>
+        </div>
+      
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content glass-card">
+            <h3>Printing & Quality Check</h3>
+            <p>
+              We bring your design to life using high-quality printing techniques.
+              Every item is carefully inspected to ensure sharp prints, vibrant
+              colors, and long-lasting quality.
+            </p>
+          </div>
+        </div>
+      
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content glass-card">
+            <h3>Pickup or Delivery</h3>
+            <p>
+              Your order is packaged and ready. Choose to collect your items or have
+              them delivered so you can start wearing, selling, or sharing your
+              custom prints.
+            </p>
+          </div>
+        </div>
+      </div>
+      <section class="portfolio-section" id="portfolio">
+        <div class="services-header">
+          <span class="eyebrow">Past Work</span>
+          <h2>Our Portfolio</h2>
+        </div>
+      
+        <div class="portfolio-grid">
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtOne.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtTwo.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtThree.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtFour.jpeg" alt="App 1" />
+
+        </div>
+      
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtFive.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtSix.jpeg" alt="App 1" />
+
+        </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtSeven.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtEight.jpeg" alt="App 1" />
+
+        </div>
+      
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtNine.jpeg" alt="App 1" />
+
+        </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtTen.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtTwelve.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/PrintShirtThirteen.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/Sign-Print.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/Sign-Print-2.jpeg" alt="App 1" />
+
+        </div>
+      
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/Baby-Print-shirt.jpeg" alt="App 1" />
+
+        </div>
+          <div class="project-card">
+            <img src="InsideoutDesigns/Images/Baby-shirt.jpeg" alt="App 1" />
+
+          </div>
+        
+          </div>
+        </div>
+      </section>
+
+    <footer id="contact"class="glass-footer">
+        <div class="footer-container">
+          <div class="footer-col">
+            <div class="logo">
+              <img src="InsideoutDesigns/Images/Logo.png" alt="Logo" />
+            </div>
+            <p class="footer-desc">
+             We Print your vision
+            </p>
+          </div>
+      
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+        <li><a href="#tshirt">T Shirts</a></li>
+        <li><a href="#whatwedo">What We Do</a></li>
+          
+            </ul>
+          </div>
+      
+          <div class="footer-col footer-form">
+            <h4>Get in Touch</h4>
+             <div class="social-links">
+           <p style="color: black; size:0.8rem;">douglas27small@icloud.com<br>0656138486</p>
+            </div>
+            
+          </div>
+      
+          <div class="footer-col">
+            <h4>Follow</h4>
+            <div class="social-links">
+             
+              <a href="https://www.instagram.com/insideoutsigns/?hl=zh-cn">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61578131816440">Facobook</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
