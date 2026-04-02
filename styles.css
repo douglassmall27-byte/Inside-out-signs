@@ -192,28 +192,26 @@ body {
   text-align: center;
   overflow: hidden;
   position: relative;
-
-  /* 1. THE BACKGROUND IMAGE */
-  background-image: url("InsideoutDesigns/Images/Hero image.jpeg"); /* Replace with your image file name */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Optional: Creates a parallax effect on scroll */
+  /* Remove background-image from here */
 }
 
-/* 2. THE ADJUSTABLE OVERLAY */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 0; 
   left: 0;
-  width: 100%;
+  width: 100%; 
   height: 100%;
-
-  /* ADJUST OVERLAY COLOR AND OPACITY HERE */
-  /* rgba(0, 0, 0, 0.5) = Black at 50% opacity */
-  background: rgba(0, 0, 0, 0.5);
-
-  z-index: 1;
+  
+  /* Move background properties here */
+  background-image: url("InsideoutDesigns/Images/Hero%20image.jpeg"); 
+  background-size: cover;
+  background-position: center;
+  
+  /* Use fixed positioning instead of background-attachment */
+  position: fixed; 
+  will-change: transform;
+  z-index: -1;
 }
 
 /* 3. ENSURE CONTENT SITS ABOVE OVERLAY */
@@ -661,213 +659,7 @@ body {
   }
 }
 
-/* --- 1. SECTION LAYOUT --- */
-.configurator-section {
-  padding-top:50px;
-  padding-bottom: 50px;
-  background: #ffffff;
-  color: #1d1d1f;
-}
 
-.config-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.config-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr; /* Controls on left, Preview on right */
-  gap: 40px;
-  align-items: start;
-}
-
-/* --- 2. CONTROLS PANEL --- */
-.controls-panel {
-  padding: 40px;
-  background: rgba(245, 245, 247, 0.5); /* Light grey glass */
-  border-radius: 30px;
-  backdrop-filter: blur(10px);
-  border: 1px solid #e5e5e5;
-}
-
-.option-group {
-  margin-bottom: 25px;
-}
-
-.option-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-  color: #1d1d1f;
-}
-
-/* Inputs, Selects, and User Info */
-select,
-.user-info input {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #d2d2d7;
-  background: white;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-select:focus,
-.user-info input:focus {
-  border-color: #0071e3;
-}
-
-/* --- 3. COLOR PICKER & SWATCHES --- */
-.color-picker {
-  display: flex;
-  gap: 12px;
-}
-
-.color-swatch {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.color-swatch:hover {
-  transform: scale(1.15);
-}
-
-.color-swatch.active {
-  border-color: #0071e3;
-  transform: scale(1.2);
-}
-
-/* Swatch Colors */
-.black {
-  background: #1d1d1f;
-} /* Used for Navy/Black */
-.red {
-  background: #e03e3e;
-}
-.pink {
-  background: #ff9a9e;
-}
-.grey {
-  background: #8e8e93;
-}
-.white {
-  background: #ffffff;
-  border: 1px solid #d2d2d7;
-}
-
-/* --- 4. PREVIEW PANEL --- */
-.preview-panel {
-  background: #f5f5f7;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 500px;
-  height: 100%;
-}
-
-.shirt-display img {
-  max-width: 70%;
-  height: auto;
-  transition: opacity 0.3s ease;
-  display: block;
-  margin: 0 auto;
-}
-
-/* --- 5. SUCCESS MODAL (LIQUID GLASS) --- */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 10000;
-
-  /* Modal visibility logic */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.modal-overlay.active {
-  display: flex;
-  opacity: 1;
-}
-
-.modal-content {
-  background: white;
-  padding: 50px;
-  border-radius: 40px;
-  max-width: 500px;
-  width: 90%;
-  text-align: center;
-  transform: scale(0.9);
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-}
-
-.modal-overlay.active .modal-content {
-  transform: scale(1);
-}
-
-.summary-box {
-  background: rgba(0, 0, 0, 0.03);
-  padding: 20px;
-  border-radius: 20px;
-  text-align: left;
-  margin: 20px 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.summary-box hr {
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 15px 0;
-}
-
-/* --- 6. RESPONSIVE DESIGN --- */
-@media (max-width: 850px) {
-  .config-container {
-    grid-template-columns: 1fr; /* Stacks controls and preview */
-  }
-
-  .preview-panel {
-    min-height: 400px;
-    order: -1; /* Puts the shirt preview on top for mobile users */
-  }
-
-  .controls-panel {
-    padding: 25px;
-  }
-}
-
-/* Custom Print Toggle Visibility */
-.upload-hidden {
-  display: none;
-}
-
-.upload-hidden.active {
-  display: block;
-  margin-top: 15px;
-  margin-bottom:15px;
-}
 
 /* FOOTER STYLES */
 .glass-footer {
@@ -935,7 +727,7 @@ select:focus,
   text-decoration: none;
   color: #1d1d1f;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1rem;
   opacity: 0.7;
   transition: opacity 0.3s;
 }
