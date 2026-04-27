@@ -1057,6 +1057,32 @@ body {
   }
 }
 
+.mx-actions-view {
+  padding-top:20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mx-button-view {
+  background: black;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.mx-button-view:hover {
+  background: Blue;
+  transform: scale(1.05);
+}
+
 
 .process-header {
   text-align: center;
@@ -1271,13 +1297,7 @@ body {
   }
 }
 
-.view-more-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px; /* Adjust spacing from the grid as needed */
-  padding-bottom: 20px;
-}
+
 
 .view-more-btn {
   padding: 12px 24px;
